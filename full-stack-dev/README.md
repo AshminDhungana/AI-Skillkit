@@ -38,5 +38,13 @@ This folder contains a collection of reusable skills (prompts, templates, or gui
 
 ## Notes
 
-- Skills marked **Not created** are placeholders for future expansion.
-- Adapt the order and selection of skills to match your actual project needs.
+- For Use Guide, detailed instructions, see the [Use Guide](../docs/use_guide.md).
+
+Simple usecase Claude Code:
+
+- Creat a folder in .claude/skills/ e.g: .claude/skills/project-planning/
+- Copy the ./1-initial-project-planning-skill.md in the project-planning folder to .claude/skills/project-planning/skill.md
+- Run the skill in the chat interface like below:
+  /project-planning <Enter>
+
+  That's it. You can also create ./claude/skills/full-stack-dev/ to store all the skills for full-stack development. Figure that out. Thank You!

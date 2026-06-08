@@ -150,6 +150,8 @@ description: UI/UX design workflow with component structure, styling approach, a
 
 ## 🔧 Using This Repository
 
+For more detailed instructions, see the [Use Guide](docs/use_guide.md).
+
 ### With AI Code Editors (Cursor, Claude Code, etc.)
 
 When asking your IDE to perform a task, reference the relevant skill file to strictly guide the AI's output:

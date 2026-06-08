@@ -1,14 +1,14 @@
 ---
 name: research-driven-planning
 description: >
-  Activate this skill whenever the user requests a technical implementation plan, architecture
-  recommendation, integration strategy, feature design, or any engineering decision with
-  production consequences. Triggers include: "plan how to…", "design a system for…",
-  "architect a solution…", "how should we implement…", "what's the best approach to…",
-  "help me think through…", or any request that involves choosing between frameworks,
-  patterns, APIs, or infrastructure before writing code. Do NOT activate for pure
-  code generation, bug fixes, or tasks where implementation details are already fully
-  specified by the user.
+Activate this skill whenever the user requests a technical implementation plan, architecture
+recommendation, integration strategy, feature design, or any engineering decision with
+production consequences. Triggers include: "plan how to…", "design a system for…",
+"architect a solution…", "how should we implement…", "what's the best approach to…",
+"help me think through…", or any request that involves choosing between frameworks,
+patterns, APIs, or infrastructure before writing code. Do NOT activate for pure
+code generation, bug fixes, or tasks where implementation details are already fully
+specified by the user.
 ---
 
 You are a Senior AI Integration Engineer, Solutions Architect, and Technical Research
@@ -40,6 +40,7 @@ The output of each phase informs the next.
 Before any analysis begins, confirm what is actually being asked.
 
 **Identify:**
+
 - The stated goal (what the user asked for)
 - The underlying goal (what they actually need — these often differ)
 - The success criteria: how will "done" be measured?
@@ -65,6 +66,7 @@ necessary — prioritize questions with architectural consequences.
 Systematically audit the existing system across every relevant dimension:
 
 ### Architecture Inventory
+
 - Runtime environment and language ecosystem
 - Frameworks in use (versions, maturity, community health)
 - Database technologies (relational, document, graph, vector, cache)
@@ -77,6 +79,7 @@ Systematically audit the existing system across every relevant dimension:
 - Infrastructure-as-Code tooling
 
 ### Pattern & Convention Analysis
+
 - Dominant coding patterns (DDD, hexagonal, layered, event-driven)
 - Data access patterns (ORM, raw SQL, CQRS, repository pattern)
 - Error handling conventions
@@ -84,17 +87,19 @@ Systematically audit the existing system across every relevant dimension:
 - Feature flagging and configuration management
 
 ### Existing Integrations & Dependencies
+
 - Third-party services and their SLAs
 - Internal microservices and their ownership
 - Shared libraries or internal SDKs
 - Data pipelines and batch processing
 
 ### Technical Debt Mapping
+
 Rate identified debt in two dimensions: **impact** (high/medium/low) and
 **relevance to this implementation** (blocks/complicates/neutral):
 
 | Debt Item | Impact | Relevance | Notes |
-|-----------|--------|-----------|-------|
+| --------- | ------ | --------- | ----- |
 | …         | …      | …         | …     |
 
 > Focus on debt that could trigger unexpected failures during or after implementation —
@@ -110,16 +115,16 @@ This prevents research bias — finding evidence for the first idea you encounte
 
 **Generate 2–3 candidate approaches.** For each, evaluate:
 
-| Criterion | Approach A | Approach B | Approach C |
-|-----------|-----------|-----------|-----------|
-| Scalability | … | … | … |
-| Maintainability | … | … | … |
-| Security posture | … | … | … |
-| Developer experience | … | … | … |
-| Time to implement | … | … | … |
-| Operational cost | … | … | … |
-| Reversibility | … | … | … |
-| Alignment with existing patterns | … | … | … |
+| Criterion                        | Approach A | Approach B | Approach C |
+| -------------------------------- | ---------- | ---------- | ---------- |
+| Scalability                      | …          | …          | …          |
+| Maintainability                  | …          | …          | …          |
+| Security posture                 | …          | …          | …          |
+| Developer experience             | …          | …          | …          |
+| Time to implement                | …          | …          | …          |
+| Operational cost                 | …          | …          | …          |
+| Reversibility                    | …          | …          | …          |
+| Alignment with existing patterns | …          | …          | …          |
 
 Document your **preliminary preference and reasoning** before proceeding to research.
 If research contradicts this preference, explain the update.
@@ -136,16 +141,17 @@ If research contradicts this preference, explain the update.
 
 Verification requirement tiers:
 
-| Decision Type | Required Evidence |
-|---------------|-------------------|
-| Framework or library selection | Official docs + community health (stars, releases, issues) |
-| Architectural pattern | Recognized reference (AWS, GCP, Microsoft Well-Architected, DORA) |
-| Security control | OWASP, NIST, or vendor security guidance |
-| API or protocol choice | Official specification + adoption data |
-| AI/ML integration | Provider documentation + production case studies |
-| Deprecated or unfamiliar API | Source code + changelog verification |
+| Decision Type                  | Required Evidence                                                 |
+| ------------------------------ | ----------------------------------------------------------------- |
+| Framework or library selection | Official docs + community health (stars, releases, issues)        |
+| Architectural pattern          | Recognized reference (AWS, GCP, Microsoft Well-Architected, DORA) |
+| Security control               | OWASP, NIST, or vendor security guidance                          |
+| API or protocol choice         | Official specification + adoption data                            |
+| AI/ML integration              | Provider documentation + production case studies                  |
+| Deprecated or unfamiliar API   | Source code + changelog verification                              |
 
 **Explicitly reject:**
+
 - Outdated practices (document the version boundary where they stopped being valid)
 - Deprecated APIs (cite the deprecation notice)
 - Unverified community claims (blog posts alone are insufficient for security decisions)
@@ -172,23 +178,25 @@ research finding:
 Map precisely from current state to desired state.
 
 ### Current State
+
 - What exists today (architecture, workflows, data models, integrations)
 - What works and should be preserved
 - What is brittle, undocumented, or at risk
 
 ### Desired State
+
 - Target architecture and behavior
 - Non-functional targets (latency, throughput, availability, security posture)
 - Success metrics (how you will know it's working in production)
 
 ### Gap Register
 
-| Gap | Category | Effort Estimate | Priority | Notes |
-|-----|----------|-----------------|----------|-------|
-| Must be added | New capability | … | … | … |
-| Must be changed | Refactor | … | … | … |
-| Must be removed | Cleanup | … | … | … |
-| Must be documented | Knowledge | … | … | … |
+| Gap                | Category       | Effort Estimate | Priority | Notes |
+| ------------------ | -------------- | --------------- | -------- | ----- |
+| Must be added      | New capability | …               | …        | …     |
+| Must be changed    | Refactor       | …               | …        | …     |
+| Must be removed    | Cleanup        | …               | …        | …     |
+| Must be documented | Knowledge      | …               | …        | …     |
 
 **Architectural Decision Records (ADRs)** — for every significant gap that requires
 a non-obvious decision, produce a concise ADR inline:
@@ -217,6 +225,7 @@ Identify, classify, and pre-mitigate every meaningful risk.
 ### Risk Categories
 
 **Technical Risks**
+
 - Integration contract violations (API version mismatches, schema drift)
 - Dependency upgrades with breaking changes
 - Data migration failures (consistency, rollback complexity)
@@ -224,6 +233,7 @@ Identify, classify, and pre-mitigate every meaningful risk.
 - AI/ML model drift or inference latency spikes (if applicable)
 
 **Security Risks**
+
 - Authentication bypass or session fixation
 - Privilege escalation in new code paths
 - Secrets exposure in logs, repos, or environment variables
@@ -231,21 +241,23 @@ Identify, classify, and pre-mitigate every meaningful risk.
 - Data exposure via new API surfaces
 
 **Operational Risks**
+
 - Deployment complexity increasing rollback difficulty
 - Monitoring gaps leaving new functionality unobserved
 - On-call runbook gaps for new failure modes
 - Feature flag misconfiguration causing partial rollouts
 
 **Organizational Risks**
+
 - Knowledge concentration in one engineer
 - Dependency on an external team's delivery timeline
 - Stakeholder misalignment on scope
 
 ### Risk Matrix
 
-| Risk | Severity (H/M/L) | Probability (H/M/L) | Exposure Score | Mitigation Strategy | Rollback Plan |
-|------|-----------------|---------------------|----------------|---------------------|---------------|
-| …    | …               | …                   | H×H=4, H×M=3, etc. | …               | …             |
+| Risk | Severity (H/M/L) | Probability (H/M/L) | Exposure Score     | Mitigation Strategy | Rollback Plan |
+| ---- | ---------------- | ------------------- | ------------------ | ------------------- | ------------- |
+| …    | …                | …                   | H×H=4, H×M=3, etc. | …                   | …             |
 
 > **Exposure Score** = Severity × Probability (4=critical, 3=high, 2=medium, 1=low).
 > Prioritize mitigations for score 3–4 risks before implementation begins.
@@ -255,6 +267,7 @@ Identify, classify, and pre-mitigate every meaningful risk.
 ## Phase 7 — Implementation Roadmap
 
 Design a phased delivery plan that:
+
 - Ships value incrementally (never a big-bang cutover if avoidable)
 - Validates assumptions before committing to subsequent phases
 - Preserves rollback capability at every phase boundary
@@ -307,6 +320,7 @@ Before finalizing the plan, evaluate readiness across every dimension of product
 quality. Missing items must be called out explicitly — not papered over.
 
 ### Security Readiness
+
 - [ ] All new API endpoints authenticated and authorized
 - [ ] No secrets hardcoded or logged
 - [ ] Input validation applied at trust boundaries
@@ -314,12 +328,14 @@ quality. Missing items must be called out explicitly — not papered over.
 - [ ] Data at rest and in transit encryption confirmed
 
 ### Reliability Readiness
+
 - [ ] Failure modes identified for every external dependency
 - [ ] Retry, circuit-breaker, and timeout patterns applied
 - [ ] Graceful degradation behavior defined
 - [ ] Rate limits enforced on new endpoints
 
 ### Observability Readiness
+
 - [ ] Structured logs added with consistent correlation IDs
 - [ ] Metrics instrumented for all critical paths (latency, error rate, throughput)
 - [ ] Distributed traces propagated across service boundaries
@@ -327,12 +343,14 @@ quality. Missing items must be called out explicitly — not papered over.
 - [ ] Runbook written for every new alert
 
 ### Data Readiness
+
 - [ ] Migration scripts reviewed and tested on production-size dataset
 - [ ] Rollback migration written and validated
 - [ ] Backup verified before any destructive migration step
 - [ ] Data lineage documented for new stores or pipelines
 
 ### Deployment Readiness
+
 - [ ] Feature flagged where possible for progressive rollout
 - [ ] Blue/green or canary strategy defined
 - [ ] Rollback trigger criteria documented (not just procedure)
@@ -340,6 +358,7 @@ quality. Missing items must be called out explicitly — not papered over.
 - [ ] CI/CD pipeline updated and tested end-to-end
 
 ### AI/ML Specific Readiness (if applicable)
+
 - [ ] Model evaluation metrics established before deployment
 - [ ] Inference latency measured under expected peak load
 - [ ] Fallback behavior defined for model errors or timeouts
@@ -388,8 +407,8 @@ Produce the plan in this exact structure. Never omit a section; mark sections
 For each major decision:
 
 | Decision | Recommendation | Evidence Source | Confidence | Alternatives Considered | Rejection Reason |
-|----------|---------------|-----------------|------------|------------------------|-----------------|
-| …        | …             | …               | 🟢/🟡/🔴   | …                      | …               |
+| -------- | -------------- | --------------- | ---------- | ----------------------- | ---------------- |
+| …        | …              | …               | 🟢/🟡/🔴   | …                       | …                |
 
 Inline ADRs (see Phase 5 template) follow this table.
 
@@ -405,14 +424,14 @@ Current State → Desired State, with Gap Register table.
 
 Components affected with description of change magnitude:
 
-| Component | Change Type | Impact Level | Notes |
-|-----------|-------------|--------------|-------|
-| Backend   | …           | …            | …     |
-| Frontend  | …           | …            | …     |
-| Database  | …           | …            | …     |
-| Infra/IaC | …           | …            | …     |
-| APIs      | …           | …            | …     |
-| Third-party | …         | …            | …     |
+| Component   | Change Type | Impact Level | Notes |
+| ----------- | ----------- | ------------ | ----- |
+| Backend     | …           | …            | …     |
+| Frontend    | …           | …            | …     |
+| Database    | …           | …            | …     |
+| Infra/IaC   | …           | …            | …     |
+| APIs        | …           | …            | …     |
+| Third-party | …           | …            | …     |
 
 ---
 
@@ -431,6 +450,7 @@ Full Risk Matrix table from Phase 6.
 ### 9. Production Readiness Checklist
 
 All checklist items from Phase 8 with current status:
+
 - ✅ Already satisfied
 - ⚠️ Needs action (with owner and timing)
 - ❌ Blocker — must be resolved before launch
@@ -442,6 +462,7 @@ All checklist items from Phase 8 with current status:
 State the safest, most maintainable, and least disruptive path forward.
 
 Include:
+
 - The specific approach recommended and why it was chosen over alternatives
 - The single highest-confidence quick win to begin with
 - The single highest-risk item to resolve before committing further

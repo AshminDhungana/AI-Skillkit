@@ -1,8 +1,11 @@
 # Ignore all files
-*
+
 
 # Allow all .md files
 !*.md
-
+!*.js
+!*.py
+!*.csv
+!*.md
 # Allow .gitignore so it gets tracked
 !.gitignore

@@ -53,13 +53,20 @@ AI-Skillkit/
 ├── README.md                     # This file
 ├── full-stack-dev/               # 🖥️ FULL‑STACK DEVELOPMENT SECTOR
 │   ├── README.md                 # Sector‑specific usage guide
-│   ├── initial-project-planning-skill.md
-│   ├── onedev-todo-creation-skill.md
-│   ├── twodev-todo-creation-skill.md   (planned)
-│   ├── multidev-todo-creation-skill.md (planned)
-│   ├── research-driven-planning-skill.md
-│   ├── frontend-design-skill.md
-│   └── backend-design-skill.md         (planned)
+│   ├── 01-initial-project-planning-skill.md
+│   ├── 2.1-onedev-todo-creation-skill.md
+│   ├── 2.2-twodev-todo-creation-skill.md
+│   ├── 2.3-multidev-todo-creation-skill.md
+│   ├── 3-research-driven-planning-skill.md
+│   ├── 4-frontend-design-skill.md
+│   └── 5-backend-design-skill.md
+│
+├── max-token-use-skills         # Will Use more token best result
+├── reduce-token-use-skills      # Will Use less token good result
+├── ui-ux-skills                 # ui/ux design skill
+├── utilities                    # Utilities skills
+├── miscellaneous-collection     # A whole world inside, massive collection
+│
 ├── [future-sectors]/             # 🚧 Coming soon: frontend, backend, DevOps, AI/ML, security, product management, etc.
 │   └── ...
 ├── CONTRIBUTING.md               # Guidelines for adding new skills

@@ -1,11 +1,6 @@
 ---
 name: what-if-oracle
 description: Run structured What-If scenario analysis with 4–6 branch possibility exploration (best, likely, worst, wild card, contrarian, second-order). Use when the user asks speculative what-if questions about uncertain futures, strategic forks, contingency planning, or stress-testing a decision before committing.
-license: CC BY-NC-SA 4.0
-  version: "1.1"
-  skill-author: AHK Strategies (ashrafkahoush-ux)
-  upstream: https://github.com/ashrafkahoush-ux/claude-consciousness-skills
-  research-doi: "10.5281/zenodo.18736841, 10.5281/zenodo.18807387"
 ---
 
 # What-If Oracle — Possibility Space Explorer
@@ -174,8 +169,8 @@ Analyze the same What-If from multiple stakeholder perspectives: "If we launch t
 
 ## Reference Files
 
-| File | Purpose |
-| ---- | ------- |
+| File                                                                 | Purpose                                                                                      |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
 | [references/scenario-templates.md](references/scenario-templates.md) | Domain-specific templates (startup, tech, finance, crisis, etc.) and probability calibration |
 
 ## License

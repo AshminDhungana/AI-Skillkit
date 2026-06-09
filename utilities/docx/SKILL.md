@@ -66,7 +66,7 @@ docx/
 1. **No manual markdown-to-docx.** Do not write markdown then convert with pandoc. If you are the Orchestrator with upstream .md from sub-agents, use md2docx. Otherwise, always Create (C#).
 2. **Target .docx exists (template, document to edit, format reference) → always WIR**, never rewrite from scratch.
 3. Clean up iteration artifacts — no `v1`/`v2`/`final` clutter in the output directory. Deliver clean, clearly named files only.
-4. Name output files by topic and match the user's language (e.g., Chinese query → `储能电站分析报告.docx`, English query → `Energy_Storage_Report.docx`). Never `output.docx`.
+4. Name output files by topic and match the user's language (e.g., English query → `Energy_Storage_Report.docx`). Never `output.docx`.
 5. Language consistency — user's conversation language across all elements (body, headings, headers/footers, TOC, chart labels, filenames).
 6. Default to the skill's own toolchain; avoid external libraries unless necessary.
 7. After choosing a route, read the corresponding reference file **in full** before writing any code. Do not skim or skip sections — traps and required patterns appear throughout.
@@ -80,6 +80,7 @@ docx/
 **Content constraints.** Word count target "X字左右" means ±20% is acceptable.
 
 **Delivery checklist** (verify before delivering):
+
 1. Document opens without errors
 2. OpenXML + business rule validation passes
 3. Headers, footers, page numbers present and correctly positioned

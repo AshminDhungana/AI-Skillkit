@@ -1,48 +1,78 @@
+<div align="center">
+
 # 🧠 AI-Skillkit
 
-> **A personal library of reusable AI skills for any task.**
-> Each skill is a structured, phase-locked prompt that tells the AI exactly what to do, what to read, and what to produce—chaining together for solo or multi-agent workflows.
+**A modular library of battle-tested AI skills for solo developers and multi-agent teams.**
 
-AI agents are only as good as the instructions they follow. **AI-Skillkit** is a curated, battle-tested library of structured markdown prompts (skills) that transform AI coding agents into disciplined, production-ready engineers. Unlike generic prompts, these skills encode **actual workflows** with steps, checkpoints, verification gates, and anti-pattern guards.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
+[![Works With](https://img.shields.io/badge/Works%20With-Claude%20%7C%20Cursor%20%7C%20Copilot%20%7C%20Gemini%20%7C%20Codex-blue)](https://github.com/AshminDhungana/AI-Skillkit)
 
-Skills act as "onboarding guides" for specific domains or tasks, transforming a general-purpose AI agent into an expert with specialized procedural knowledge.
+</div>
 
 ---
 
-## 📖 Table of Contents
+> _AI agents are only as good as the instructions they follow._
 
-- [🧠 What Are Skills?](#-what-are-skills)
-- [✨ Key Features](#-key-features)
-- [🏗️ Repository Structure](#️-repository-structure)
-- [⚡ Quick Start](#-quick-start)
-- [📝 Anatomy of a Skill](#-anatomy-of-a-skill)
-- [🔧 Using This Repository](#-using-this-repository)
-  - [With AI Code Editors (Cursor, Claude Code, etc.)](#with-ai-code-editors-cursor-claude-code-etc)
-  - [With Autonomous Agents / Custom GPTs](#with-autonomous-agents--custom-gpts)
-  - [As Human SOPs](#as-human-sops)
-- [🌍 Sector Roadmap](#-sector-roadmap)
-- [🤝 Contributing](#-contributing)
-- [📄 License](#-license)
+AI-Skillkit is a curated collection of structured markdown prompts — called **skills** — that transform general-purpose AI coding agents into disciplined, domain-expert engineers. Each skill encodes a real workflow: phase-locked steps, verification gates, anti-pattern guards, and clear output contracts. Unlike throwaway prompts, skills are designed to compose — one skill's output becomes the next skill's input, enabling complex, production-grade workflows across both solo developers and coordinated multi-agent teams.
+
+---
+
+## Table of Contents
+
+- [What Are Skills?](#-what-are-skills)
+- [Why It Matters](#-why-it-matters)
+- [Key Features](#-key-features)
+- [Repository Structure](#️-repository-structure)
+- [Quick Start](#-quick-start)
+- [Anatomy of a Skill](#-anatomy-of-a-skill)
+- [Usage Patterns](#-usage-patterns)
+- [Sector Roadmap](#-sector-roadmap)
+- [Contributing](#-contributing)
+- [License](#-license)
 
 ---
 
 ## 🧠 What Are Skills?
 
-A **skill** is a modular, self-contained capability package that extends an AI agent's capabilities by providing specialized knowledge, workflows, and tools. At its core, a skill is a folder containing a `SKILL.md` file with metadata (`name` and `description`) and instructions that tell an agent how to perform a specific task.
+A **skill** is a self-contained capability package — a structured markdown file that gives an AI agent specialized knowledge, a step-by-step workflow, and a defined output contract for a specific type of task.
 
-Skills can be chained together—one skill's output becomes the next skill's input—enabling complex, multi-step workflows across both **solo developers** and **multi-agent teams**.
+Think of each skill as an expert's onboarding guide for a narrow domain:
+
+```
+Without a skill → Generic agent → Inconsistent, token-heavy, directionless output
+With a skill    → Expert agent  → Structured, verifiable, composable output
+```
+
+Skills follow a simple but powerful pattern: **read → reason → produce**. They tell the agent exactly what context to consume, how to think through the problem, and what to deliver — nothing more, nothing less.
+
+Skills can be chained in sequence: the output of one skill becomes the structured input to the next, enabling sophisticated multi-step automation without complex orchestration frameworks.
+
+---
+
+## 💡 Why It Matters
+
+Modern AI agents fail not because the models are weak, but because the instructions are vague. Research in prompt engineering consistently shows that <a href="https://www.techvoot.com/blog/prompt-engineering-best-practices">structured, detailed prompts dramatically reduce hallucinations, improve accuracy, and keep outputs aligned with real goals</a>. Production teams building agentic systems at scale have found that <a href="https://www.uipath.com/blog/ai/agent-builder-best-practices">single-responsibility agents with narrow, well-defined scopes outperform broad, general-purpose ones</a> in every measurable way.
+
+AI-Skillkit operationalizes these findings. Instead of re-engineering prompts from scratch for every project, you get a growing library of skills that encode proven workflows, edge-case handling, and domain best practices — ready to drop into any AI-powered toolchain.
 
 ---
 
 ## ✨ Key Features
 
-- **🔗 Chainable workflows** — Use skills sequentially; each skill's output feeds directly into the next skill as input.
-- **🔄 Multi-agent ready** — Built-in support for single, two-developer, and multi-agent coordination.
-- **📋 Phase-locked** — Each skill specifies exactly what it does, what to read, and what to produce.
-- **🎯 Task‑specific** — Activate only the skills you need, avoiding token bloat and maintaining AI focus.
-- **📚 Battle‑tested** — Every skill encodes proven workflows, best practices, and domain expertise.
-- **🌍 Cross‑product compatible** — Works across Claude Code, Cursor, GitHub Copilot, Gemini CLI, OpenAI Codex, and more.
-- **🧩 Progressive disclosure** — Lightweight metadata first, full instructions only when triggered.
+**🔗 Chainable workflows** — Skills are composable by design. Each skill defines what it consumes and what it produces, so they chain naturally without glue code.
+
+**🔄 Multi-agent ready** — Skills support solo use, two-agent handoffs, and full multi-agent coordination patterns out of the box.
+
+**📋 Phase-locked execution** — Every skill specifies discrete phases: what to read, how to reason, what to verify, and what to output. No ambiguity, no drift.
+
+**🎯 Selective activation** — Load only the skills a task actually needs. This keeps agent context lean, focused, and accurate — avoiding the token bloat that degrades performance.
+
+**📚 Battle-tested** — Each skill encodes real workflows from real projects, not theoretical best practices. Anti-patterns are documented; verification gates are included.
+
+**🌍 Cross-platform compatible** — Works with Claude Code, Cursor, GitHub Copilot, Gemini CLI, OpenAI Codex, and any agent that can read a markdown file into its context.
+
+**🧩 Progressive disclosure** — Lightweight metadata (name + description) surfaces first; full instructions load only when the skill is triggered. Agents stay efficient.
 
 ---
 
@@ -50,37 +80,32 @@ Skills can be chained together—one skill's output becomes the next skill's inp
 
 ```
 AI-Skillkit/
-├── README.md                     # This file
-├── full-stack-dev/               # 🖥️ FULL‑STACK DEVELOPMENT SECTOR
-│   ├── README.md                 # Sector‑specific usage guide
-│   ├── 01-initial-project-planning-skill.md
-│   ├── 2.1-onedev-todo-creation-skill.md
-│   ├── 2.2-twodev-todo-creation-skill.md
-│   ├── 2.3-multidev-todo-creation-skill.md
-│   ├── 3-research-driven-planning-skill.md
-│   ├── 4.1-onedev-workflow-skill.md
-│   ├── 4.2-twodev-workflow-skill.md
-│   ├── 4.3-multidev-workflow-skill.md
-│   ├── 5-frontend-design-skill.md
-│   └── 6-backend-design-skill.md
 │
-├── max-token-use-skills         # Will Use more token best result
-├── reduce-token-use-skills      # Will Use less token good result
-├── ui-ux-skills                 # ui/ux design skill
-├── utilities                    # Utilities skills
-├── miscellaneous-collection     # A whole world inside, massive collection
+├── data-analysis-skills/        # Data cleaning, EDA, statistical modelling, visualization
+├── development-skills/          # Code review, debugging, testing, refactoring
+├── document-skills/             # PDF generation, Markdown conversion, document templating
+├── full-stack-dev/              # Project planning, frontend/backend design, todo creation
+├── learning-and-knowledge-skills/  # Spaced repetition, summarization, knowledge extraction
+├── max-token-use-skills/        # High-detail, maximum-quality skills (token-intensive)
+├── media-and-content-skills/    # Image generation, video scripting, social media content
+├── min-token-use-skills/        # Fast, efficient skills optimized for low token usage
+├── miscellaneous-collection/    # Experimental and uncategorized skills
+├── scientific-skills/           # LaTeX documents, simulations, data-driven research
+├── ui-ux-skills/                # Wireframing, accessibility, component design
+├── utilities/                   # File ops, data conversion, system automation
+├── writing-research-skills/     # Academic writing, peer review, grant proposals
 │
-├── [future-sectors]/             # 🚧 Coming soon: frontend, backend, DevOps, AI/ML, security, product management, etc.
-│   └── ...
-├── CONTRIBUTING.md               # Guidelines for adding new skills
-└── LICENSE                       # MIT License
+├── docs/                        # Usage guides and examples
+├── CONTRIBUTING.md
+├── LICENSE
+└── README.md
 ```
 
-Each **sector** folder contains:
+Each sector folder contains:
 
-- A sector‑specific `README.md` explaining how to use its skills.
-- Individual `*.md` skill files (created / planned).
-- Skills can be used alone or chained together within and across sectors.
+- A `README.md` explaining the skills in that sector and how to chain them
+- Individual `*.md` skill files (active or planned)
+- Skills can be used independently or composed across sector boundaries
 
 ---
 
@@ -96,147 +121,205 @@ cd AI-Skillkit
 ### 2. Pick a skill
 
 ```bash
-cat full-stack-dev/initial-project-planning-skill.md
+cat full-stack-dev/01-initial-project-planning-skill.md
 ```
 
-### 3. Load it into your AI agent
+### 3. Load it into your agent
 
-- **Claude Code / Cursor** → Copy the content into `CLAUDE.md` or `.cursor/rules/`.
-- **Custom agent** → Read the `SKILL.md` (or sector skill file) into the agent's context before task execution.
-- **Chat interface** → Paste the skill content as a system prompt.
+**Claude Code / Cursor:**
 
-### 4. Chain multiple skills
+```bash
+cp full-stack-dev/frontend-design-skill.md ~/.claude/skills/
+# or
+cp full-stack-dev/frontend-design-skill.md .cursor/rules/
+```
 
-Use the output of one skill as the input for the next. Example workflow:
+**Chat interface (Claude, ChatGPT, Gemini):**
+Paste the skill content as the system prompt before your task.
+
+**Custom agent / script:**
+
+```python
+skill = open("full-stack-dev/research-driven-planning-skill.md").read()
+agent.set_context(skill)
+agent.run(task)
+```
+
+### 4. Chain skills for complex workflows
 
 ```
-initial-project-planning-skill.md → research-driven-planning-skill.md → frontend-design-skill.md
+01-initial-project-planning-skill.md
+    ↓ outputs: requirements doc
+02-research-driven-planning-skill.md
+    ↓ outputs: technical design
+03-frontend-design-skill.md
+    ↓ outputs: component structure + styled UI
 ```
+
+Each skill's output is structured to be the next skill's input — no manual bridging required.
 
 ---
 
 ## 📝 Anatomy of a Skill
 
-Every skill is a markdown file (e.g., `frontend-design-skill.md`) that follows the Agent Skills specification:
+Every skill is a markdown file with a YAML frontmatter block and a structured instruction body:
 
 ```markdown
 ---
 name: frontend-design
-description: UI/UX design workflow with component structure, styling approach, and accessibility checks. Use when designing or implementing frontend features.
+description: >
+  UI/UX design workflow covering component structure, styling conventions,
+  and accessibility verification. Trigger when designing or implementing
+  any frontend feature.
 ---
 
 # Frontend Design Skill
 
 ## When to use this skill
 
-[Clear conditions that trigger this skill]
+Clear conditions that activate this skill — specific task types,
+input signals, or prior skill outputs that indicate it's needed.
 
 ## Input format
 
-[What this skill expects to receive from a previous skill or user]
+What this skill expects: either user-provided context or the structured
+output from a preceding skill.
 
 ## Workflow
 
-1. Step‑by‑step instructions
-2. Checkpoints and verification gates
-3. **Mandatory sections** (e.g., research, planning, execution)
-4. **Output format** (what to produce)
+### Phase 1 — Research & Understand
 
-## Best Practices
+Step-by-step instructions for analyzing the input and gathering context.
 
-- Do's and don'ts
-- Anti‑pattern examples to avoid
+### Phase 2 — Plan & Design
+
+Checkpoints, decision criteria, and structured planning steps.
+
+### Phase 3 — Execute & Verify
+
+Build instructions with mandatory verification gates and quality checks.
+
+## Anti-patterns to avoid
+
+Documented failure modes and how to sidestep them.
 
 ## Output format
 
-[Exactly what this skill must produce, often linked to the next skill's expected input]
+Exactly what this skill must produce — structured so the next skill
+in the chain can consume it without transformation.
 
-## Common edge cases
+## Edge cases
 
-- How to handle ambiguous requirements
+How to handle ambiguous requirements, missing inputs, or conflicting signals.
 ```
+
+The YAML frontmatter (name + description) is what surfaces in agent registries and IDE rule-loaders. Full instructions load only when the skill is activated.
 
 ---
 
-## 🔧 Using This Repository
+## 🔧 Usage Patterns
 
 For more detailed instructions, see the [Use Guide](docs/use_guide.md).
 
-### With AI Code Editors (Cursor, Claude Code, etc.)
+### With AI Code Editors
 
-When asking your IDE to perform a task, reference the relevant skill file to strictly guide the AI's output:
+Reference a skill file in your prompt to anchor the agent's behavior:
 
-> _"I need to build a new dashboard page. Please review `full-stack-dev/frontend-design-skill.md` before generating the code."_
-
-Or install the skill into your IDE's rules directory:
-
-```bash
-# For Claude Code
-cp full-stack-dev/frontend-design-skill.md ~/.claude/skills/
-
-# For Cursor
-cp full-stack-dev/frontend-design-skill.md .cursor/rules/
+```
+"Build the new analytics dashboard.
+Review full-stack-dev/frontend-design-skill.md before generating any code."
 ```
 
-### With Autonomous Agents / Custom GPTs
+Or install skills as permanent rules in your IDE:
 
-Provide the repository structure or a `registry.json` to your agent. When a task matches a skill, the agent can read the relevant file into its context **before** executing.
+```bash
+# Claude Code
+cp writing-research-skills/*.md ~/.claude/skills/
+
+# Cursor
+cp development-skills/*.md .cursor/rules/
+```
+
+### With Autonomous Agents
+
+Give your agent access to the skill registry. When a task matches a skill's trigger conditions, the agent reads the relevant file into context before executing:
 
 ```python
-skill_content = read_file("full-stack-dev/research-driven-planning-skill.md")
-execute_workflow(skill_content)
+import os
+
+def load_skill(name: str) -> str:
+    path = f"skills/{name}/SKILL.md"
+    return open(path).read() if os.path.exists(path) else ""
+
+skill = load_skill("data-analysis")
+agent.inject_context(skill)
+agent.run(task)
 ```
 
 ### As Human SOPs
 
-Because each skill is written in clear, checklist‑style markdown, it doubles perfectly as:
+Every skill is written in clear, checklist-style markdown — which makes it equally useful as:
 
-- Onboarding documentation for new team members
-- PR review checklists
-- Team engineering standards
+- **Onboarding documentation** for new team members joining a project
+- **PR review checklists** for domain-specific code quality standards
+- **Engineering runbooks** for recurring workflows that need consistent execution
 
 ---
 
 ## 🌍 Sector Roadmap
 
-Skills will be added progressively across multiple domains. Each sector will contain specialized skills for its domain, all following the same standardized format.
+| Sector                | Status     | Description                                                                               |
+| --------------------- | ---------- | ----------------------------------------------------------------------------------------- |
+| 🖥️ **full-stack-dev** | ✅ Active  | Project planning, todo creation, research-driven design, frontend/backend workflows       |
+| 📊 **data-analysis**  | ✅ Active  | Data cleaning, exploratory analysis, statistical modelling, visualization                 |
+| 💻 **development**    | ✅ Active  | Code review, debugging, testing, refactoring, performance analysis                        |
+| 📄 **document**       | ✅ Active  | PDF generation, Markdown conversion, Office document templating                           |
+| 🧠 **learning**       | ✅ Active  | Spaced repetition, summarization, knowledge graph extraction                              |
+| 🎨 **media**          | ✅ Active  | Image generation prompts, video scripts, social media content creation                    |
+| 🔬 **scientific**     | ✅ Active  | LaTeX documents, simulation workflows, data-driven research                               |
+| ✍️ **writing**        | ✅ Active  | Academic writing, peer review, grant proposals, technical documentation                   |
+| 🎨 **frontend**       | 📅 Planned | UI component design, accessibility audits, responsive layout, framework-specific patterns |
+| 🔧 **backend**        | 📅 Planned | API design, database schema, security hardening, performance optimization                 |
+| 🐳 **devops**         | 📅 Planned | CI/CD pipelines, infrastructure as code, monitoring, container orchestration              |
+| 🤖 **AI/ML**          | 📅 Planned | Model selection, training pipelines, evaluation frameworks, deployment                    |
+| 🔒 **security**       | 📅 Planned | Threat modelling, secure code review, compliance checklists                               |
+| 📦 **product**        | 📅 Planned | Requirements gathering, user story mapping, roadmap planning                              |
+| 💼 **business**       | 📅 Planned | Financial modelling, market research, competitive analysis                                |
 
-| Sector                | Status     | Description                                                                        |
-| --------------------- | ---------- | ---------------------------------------------------------------------------------- |
-| 🖥️ **full-stack-dev** | ✅ Started | Initial planning, todo creation, research, and frontend/backend design.            |
-| 🎨 **frontend**       | 📅 Planned | UI component design, accessibility, responsive layouts, framework‑specific skills. |
-| 🔧 **backend**        | 📅 Planned | API design, database schema, security hardening, performance optimization.         |
-| 🐳 **devops**         | 📅 Planned | CI/CD pipelines, infrastructure as code, monitoring, container orchestration.      |
-| 🤖 **AI/ML**          | 📅 Planned | Model selection, training pipelines, evaluation, deployment.                       |
-| 🔒 **security**       | 📅 Planned | Threat modeling, secure code review, compliance checks.                            |
-| 📦 **product**        | 📅 Planned | Requirement gathering, user story mapping, roadmap planning.                       |
-| 💼 **business**       | 📅 Planned | Financial modeling, market research, sales strategies.                             |
-
-Each sector will mirror the same skill structure, ensuring a consistent experience across all domains.
+All sectors follow the same standardized skill structure — consistent experience regardless of domain.
 
 ---
 
 ## 🤝 Contributing
 
-This repository is a **personal library**, but contributions are welcome!
+This is a personal library, but contributions are welcome.
 
-### Quick guidelines:
+1. **Fork** the repository
+2. **Create** a new sector folder or add skill files to an existing sector
+3. **Follow** the skill anatomy (YAML frontmatter + phased instruction body)
+4. **Update** the sector's `README.md` with your new skill
+5. **Submit** a pull request
 
-1. **Fork** the repository.
-2. **Create** a new folder for a new sector, or add skill files to an existing sector.
-3. **Follow** the skill anatomy (YAML frontmatter + markdown instructions).
-4. **Update** the sector's `README.md` with your new skill.
-5. **Submit** a pull request.
+For full contribution guidelines, see [`CONTRIBUTING.md`](./CONTRIBUTING.md).
 
-For full guidelines, see [`CONTRIBUTING.md`](CONTRIBUTING.md).
+**Good skill contributions:**
+
+- Encode a real workflow you've actually used in production
+- Include at least one documented anti-pattern or edge case
+- Define a clear, structured output format that downstream skills can consume
 
 ---
 
 ## 📄 License
 
-Licensed under the **MIT License**.
+Licensed under the **[MIT License](./LICENSE)**.
 
 ---
 
-_Built by developers, for agents._  
+<div align="center">
+
+_Built by developers, for agents._
+
 **AI-Skillkit — Skills that scale. From solo to swarm.**
+
+</div>

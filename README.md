@@ -85,11 +85,14 @@ AI-Skillkit/
 ├── development-skills/          # Code review, debugging, testing, refactoring
 ├── document-skills/             # PDF generation, Markdown conversion, document templating
 ├── full-stack-dev/              # Project planning, frontend/backend design, todo creation
+├── health-and-lifesciences-skills/
 ├── learning-and-knowledge-skills/  # Spaced repetition, summarization, knowledge extraction
 ├── max-token-use-skills/        # High-detail, maximum-quality skills (token-intensive)
 ├── media-and-content-skills/    # Image generation, video scripting, social media content
 ├── min-token-use-skills/        # Fast, efficient skills optimized for low token usage
 ├── miscellaneous-collection/    # Experimental and uncategorized skills
+├── preformance-improvement-skills/ # Performance Improvement Skills
+├── refrence-for-ai-skills-designs/ # Design.md Files
 ├── scientific-skills/           # LaTeX documents, simulations, data-driven research
 ├── ui-ux-skills/                # Wireframing, accessibility, component design
 ├── utilities/                   # File ops, data conversion, system automation
